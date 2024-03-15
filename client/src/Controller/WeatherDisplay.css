@@ -1,0 +1,62 @@
+.weather-display-container {
+    background-color: #f0f0f0;
+    padding: 20px;
+    color: #333;
+    font-family: serif;
+    font-weight: bold;
+}
+
+.weather-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    font-weight: 400;
+}
+
+.weather-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.forecast-card {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-top: 10px;
+    font-weight: 300;
+}
+.btnn{
+    background-color: black;
+    border-radius: 26px;
+    margin: 10px;
+    padding: 6px;
+}
+
+.forcastIcon{
+    width: 72px;
+}
+
+.card-title{
+    font-weight: bold;
+    font-size: 35px;
+}
+.card-text{
+    font-size: large;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}

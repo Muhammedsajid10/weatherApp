@@ -1,0 +1,16 @@
+.container {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+.username {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+.text {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
