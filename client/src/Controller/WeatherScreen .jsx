@@ -4,12 +4,14 @@ import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
 import Chart from 'chart.js/auto';
 import Swal from 'sweetalert2';
 import './WeatherDisplay.css';
+import { useNavigate } from 'react-router-dom';
 
 const WeatherDisplay = () => {
     const [locations, setLocations] = useState([]);
     const [city, setCity] = useState('');
     const apiKey = '20c95c576c94e7d3738be657289b55d7';
     const [userId, setUserId] = useState('');
+    const navigate = useNavigate()
 
     useEffect(() => {
         const tokenData = localStorage.getItem('futUserInfo');
@@ -201,10 +203,14 @@ const WeatherDisplay = () => {
     };
 
     const getIconUrl = (icon) => `http://openweathermap.org/img/w/${icon}.png`;
+    const savedLOc = () => {
+        navigate('/getLoc')
+    }
 
     return (
         <Container className="weather-display-container">
             <h1 className="text-center mt-3 mb-5">Weather Dashboard</h1>
+            <div><Button className='savdLoc' onClick={savedLOc}>Saved Location</Button></div>
             <Form>
                 <Row className="mb-3">
                     <Col>

@@ -1,0 +1,73 @@
+.cardd {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    margin-bottom: 20px;
+    /* transition: box-shadow 0.3s; */
+    transition: transform 1s;
+}
+
+.cardd:hover {
+    box-shadow: 0 0 10px rgba(229, 158, 158, 0.63);
+    background-color: indianred; 
+    transform: scale(1.1,1.1);
+    cursor: pointer;
+}
+
+.graph-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+
+.button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+
+.cont{
+    border: 2px solid grey;
+    border-radius: 10px;
+    padding: 35px;
+}
+.getlocH{
+    margin-bottom: 41px;
+    font-weight: 600;
+    font-family: math;
+}
+.clsbtn{
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    bottom: -20px; /* Adjust the position of the tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    visibility: hidden; /* Hide the tooltip by default */
+    opacity: 0; /* Hide the tooltip by default */
+    transition: opacity 0.3s, visibility 0.3s; /* Add a transition effect */
+}
+
+.cardd:hover .tooltip {
+    visibility: visible; /* Show the tooltip on hover */
+    opacity: 1; /* Show the tooltip on hover */
+}

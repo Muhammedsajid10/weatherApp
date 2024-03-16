@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import Login from './Controller/Login';
 import UserDashboard from './Controller/UserDashboard';
 import WeatherScreen from './Controller/WeatherScreen ';
+import GetLocation from './Controller/GetLocation';
 
 function App() {
 
@@ -25,8 +26,8 @@ function App() {
       <Routes>
         <Route path='/' element={<UserReg/>} />
         <Route path='/login' element={<Login setUserInfo={setUserInfo} userInfo={userInfo}/>} />
-        <Route path='/dash' element={<UserDashboard/>} />
         <Route path='/weather' element={<WeatherScreen/>}/>
+        <Route path='/getLoc' element={<GetLocation/>} />
       </Routes>
       </BrowserRouter>
     </div>

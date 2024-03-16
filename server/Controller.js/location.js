@@ -35,4 +35,15 @@ const getLocations = async (req, res) => {
     }
 }
 
-module.exports = { addLocation, getLocations };
+const getLocationsId = async (req, res) => {
+    try {
+        const userId = req.params.userId; 
+        const locations = await Location.find({ userId });
+        res.status(200).json(locations);
+    } catch (error) {
+        console.log('Error on while getting locations.......', error);
+        res.status(500).json({ error: "An error occurred while getting the locations." });
+    }
+}
+
+module.exports = { addLocation, getLocations, getLocationsId };

@@ -1,0 +1,10 @@
+.graph-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.graph {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+

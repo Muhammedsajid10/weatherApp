@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 const Login = ({ setUserInfo, userInfo }) => {
     const [email, setEmail] = useState("");
@@ -36,7 +36,7 @@ const Login = ({ setUserInfo, userInfo }) => {
     }
 
     return (
-        <div className="container">
+        <div className="container contLog">
             <h1>Login page</h1>
             {error && <div className='error-message'>{error}</div>}
             <div className="form-wrapper">
@@ -60,6 +60,9 @@ const Login = ({ setUserInfo, userInfo }) => {
                         Submit
                     </Button>
                 </Form>
+                <div className="login-link">
+                    Don't have an account? <Link to="/">Sinpup now</Link>
+                </div>
             </div>
         </div>
     )

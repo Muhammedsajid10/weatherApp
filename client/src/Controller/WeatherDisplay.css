@@ -1,9 +1,12 @@
 .weather-display-container {
     background-color: #f0f0f0;
-    padding: 20px;
+    padding: 27px;
     color: #333;
     font-family: serif;
     font-weight: bold;
+    margin-top: 48px;
+    border-radius: 10px;
+    border: 2px solid gray;
 }
 
 .weather-card {
@@ -41,11 +44,17 @@
 }
 
 .card-title{
-    font-weight: bold;
+    font-weight: 600;
     font-size: 35px;
+    font-family: math;
 }
 .card-text{
     font-size: large;
+}
+.savdLoc{
+    margin-bottom: 45px;
+    background-color: black;
+    border-radius: 10px;
 }
 
 @keyframes fadeIn {

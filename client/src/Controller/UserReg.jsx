@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './UserReg.css';
 
 const UserReg = () => {
@@ -36,7 +36,7 @@ const UserReg = () => {
     }
 
     return (
-        <div className="container">
+        <div className="container contReg">
             <h1>Register</h1>
             {error && <div className='error-message'>{error}</div>}
             <div className="form-wrapper">
@@ -65,6 +65,9 @@ const UserReg = () => {
                         Submit
                     </Button>
                 </Form>
+                <div className="login-link">
+                    Already have an account? <Link to="/login">Login now</Link>
+                </div>
             </div>
         </div>
     )
