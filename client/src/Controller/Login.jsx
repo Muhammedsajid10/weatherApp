@@ -32,12 +32,13 @@ const Login = ({ setUserInfo, userInfo }) => {
             }
         } catch (error) {
             console.log('error on while posting data..');
+            setError('Login failed. Please check your credentials and try again.');
         }
     }
 
     return (
         <div className="container contLog">
-            <h1>Login page</h1>
+            <h1 className='LogHd'>Login page</h1>
             {error && <div className='error-message'>{error}</div>}
             <div className="form-wrapper">
                 <Form onSubmit={logData}>
@@ -69,3 +70,4 @@ const Login = ({ setUserInfo, userInfo }) => {
 }
 
 export default Login;
+

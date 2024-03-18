@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import UserReg from './Controller/UserReg';
 import { useEffect, useState } from 'react';
 import Login from './Controller/Login';
-import UserDashboard from './Controller/UserDashboard';
 import WeatherScreen from './Controller/WeatherScreen ';
 import GetLocation from './Controller/GetLocation';
 

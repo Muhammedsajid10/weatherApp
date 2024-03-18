@@ -37,7 +37,7 @@ const UserReg = () => {
 
     return (
         <div className="container contReg">
-            <h1>Register</h1>
+            <h1 className='RegHd'>Register</h1>
             {error && <div className='error-message'>{error}</div>}
             <div className="form-wrapper">
                 <Form onSubmit={postData}>

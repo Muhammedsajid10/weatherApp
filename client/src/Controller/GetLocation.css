@@ -1,15 +1,17 @@
 .cardd {
-    background-color: #f8f9fa;
+    background-color: #413f3f;
     border: 1px solid #dee2e6;
+    color: white;
     margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(229, 158, 158, 0.63);
     /* transition: box-shadow 0.3s; */
     transition: transform 1s;
 }
 
 .cardd:hover {
-    box-shadow: 0 0 10px rgba(229, 158, 158, 0.63);
-    background-color: indianred; 
-    transform: scale(1.1,1.1);
+    
+    background-color: rgb(121, 116, 116); 
+    transform: scale(1.1);
     cursor: pointer;
 }
 
@@ -36,8 +38,7 @@
 
 
 .cont{
-    border: 2px solid grey;
-    border-radius: 10px;
+    box-shadow: 0 0 48px rgba(197, 163, 170, 30.63);
     padding: 35px;
 }
 .getlocH{
@@ -68,6 +69,6 @@
 }
 
 .cardd:hover .tooltip {
-    visibility: visible; /* Show the tooltip on hover */
-    opacity: 1; /* Show the tooltip on hover */
+    visibility: visible;
+    opacity: 1; 
 }

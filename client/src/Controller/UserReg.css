@@ -1,11 +1,12 @@
 .contReg {
+    background-color: #373434;
+    padding: 27px;
+    color: #fdf9f9;
+    font-family: serif;
+    font-weight: bold;
     margin-top: 48px;
-    /* width: 50%; */
-    border: 2px solid black;
-    border-radius: 40px;
-    background-color: #f8f9fa;
-    padding: 20px;
-    transition: all 0.3s ease;
+    border-radius: 10px;
+    border: 2px solid gray;
 }
 
 .contReg:hover {
@@ -43,4 +44,7 @@
 .btn-primary:hover {
     background-color: #0056b3; /* Darker blue on hover */
     border-color: #0056b3; /* Darker blue border on hover */
+}
+.RegHd{
+    font-family: math;
 }

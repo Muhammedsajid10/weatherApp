@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, Card, Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import Chart from 'chart.js/auto';
 import Swal from 'sweetalert2';
 import './WeatherDisplay.css';
@@ -11,15 +11,24 @@ const WeatherDisplay = () => {
     const [city, setCity] = useState('');
     const apiKey = '20c95c576c94e7d3738be657289b55d7';
     const [userId, setUserId] = useState('');
-    const navigate = useNavigate()
+    const [username, setUsername] = useState('')
+    const navigate = useNavigate();
 
     useEffect(() => {
-        const tokenData = localStorage.getItem('futUserInfo');
-        if (tokenData) {
-            const parsedTokenData = JSON.parse(tokenData);
-            setUserId(parsedTokenData.data.userId);
+        try {
+            const tokenData = localStorage.getItem('futUserInfo');
+            if (tokenData) {
+                const parsedTokenData = JSON.parse(tokenData);
+                setUserId(parsedTokenData.data.userId);
+                setUsername(parsedTokenData.data.name);
+            }
+        } catch (error) {
+            console.error('Error parsing token data:', error);
+
         }
     }, []);
+
+
 
     useEffect(() => {
         locations.forEach(location => {
@@ -204,11 +213,55 @@ const WeatherDisplay = () => {
 
     const getIconUrl = (icon) => `http://openweathermap.org/img/w/${icon}.png`;
     const savedLOc = () => {
-        navigate('/getLoc')
-    }
+        navigate('/getLoc');
+    };
+
+    const handleLogout = () => {
+        // Perform logout actions here
+        localStorage.removeItem('futUserInfo');
+        // Reset userId state
+        setUserId('');
+        // Redirect to the login page
+        navigate('/login');
+    };
+
 
     return (
         <Container className="weather-display-container">
+            {/* <Navbar bg="dark" variant="dark">
+                <Container>
+                    <Navbar.Brand href="#home">Weather App</Navbar.Brand>
+                    <Nav className="me-auto">
+                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link href="#saved">Saved Locations</Nav.Link>
+                    </Nav>
+                </Container>
+            </Navbar> */}
+
+            <Navbar bg="dark" variant="dark">
+                <Container>
+                    <Navbar.Brand href="#home">Weather App</Navbar.Brand>
+                    <Nav className="me-auto">
+                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link href="/getLoc">Saved Locations</Nav.Link>
+                    </Nav>
+                    {userId ? (
+                        <Nav>
+                            <NavDropdown title={`Welcome, ${username}`} id="basic-nav-dropdown">
+
+                                <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
+                            </NavDropdown>
+                        </Nav>
+                    ) : (
+                        <Button variant="outline-primary" onClick={() => navigate('/login')}>Account</Button>
+                    )}
+                </Container>
+            </Navbar>
+
+
+
+
+
             <h1 className="text-center mt-3 mb-5">Weather Dashboard</h1>
             <div><Button className='savdLoc' onClick={savedLOc}>Saved Location</Button></div>
             <Form>
@@ -263,8 +316,6 @@ const WeatherDisplay = () => {
                                         </Row>
                                     </div>
                                 )}
-
-
                             </Card.Body>
                         </Card>
                     </Col>

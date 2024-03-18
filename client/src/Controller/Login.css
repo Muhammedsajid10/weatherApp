@@ -3,7 +3,8 @@
     /* width: 50%; */
     border: 2px solid black;
     border-radius: 40px;
-    background-color: #f8f9fa;
+    background-color: #312b2b;
+    color: white;
     padding: 20px;
     transition: all 0.3s ease;
 }
@@ -26,4 +27,7 @@
 
 .form-control{
     border: 2px solid black;
+}
+.LogHd{
+    font-family: math;
 }

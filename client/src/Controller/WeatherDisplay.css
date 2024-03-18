@@ -1,12 +1,13 @@
 .weather-display-container {
-    background-color: #f0f0f0;
+    background-color: #221f1f;
     padding: 27px;
-    color: #333;
+    color: #f0eded;
     font-family: serif;
     font-weight: bold;
     margin-top: 48px;
     border-radius: 10px;
-    border: 2px solid gray;
+    border: 2px solid #f6f0f0;
+
 }
 
 .weather-card {
